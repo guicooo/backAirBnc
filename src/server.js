@@ -6,7 +6,7 @@ const routes = require('./routes');
 
 const app = express();
 
-const uri = "mongodb+srv://admin:admin@cluster0-0ljsi.mongodb.net/test?retryWrites=true&w=majority";
+const MONGO_URL = "mongodb+srv://admin:admin@cluster0-0ljsi.mongodb.net/test?retryWrites=true&w=majority";
 // const client = new MongoClient(uri, { 
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true,
@@ -17,7 +17,7 @@ const uri = "mongodb+srv://admin:admin@cluster0-0ljsi.mongodb.net/test?retryWrit
 //   client.close();
 // });
 
-mongoose.connect(uri, {
+mongoose.connect(MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(routes);
 
 
-app.listen(3333);
+app.listen(process.env.PORT || 3333);
 
 
 // req.query = Acessar query params (para filtros)
