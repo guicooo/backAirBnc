@@ -1,8 +1,10 @@
+const cool = require('cool-ascii-faces')
 const express = require('express');
 const mongoose = require('mongoose');
 const MongoClient = require('mongodb').MongoClient;
 const cors = require("cors");
 const routes = require('./routes');
+const PORT = process.env.PORT || 5000
 
 const app = express();
 
@@ -22,14 +24,17 @@ mongoose.connect(MONGO_URL, {
     useUnifiedTopology: true,
 });
 
+express()
+  .get('/cool', (req, res) => res.send(cool()))
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+
+
 app.use(cors());
 app.use(express.json());
 app.use(routes);
 
 
-app.listen(process.env.PORT || 3000, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-  });
 
 
 // req.query = Acessar query params (para filtros)
