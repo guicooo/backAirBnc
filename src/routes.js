@@ -5,7 +5,7 @@ const uploadConfig = require('./config/upload');
 const SessionController = require('./controllers/SessionController');
 const SpotController = require('./controllers/SpotControlller');
 const DashboardController = require('./controllers/DashboardController');
-const BookingController = require('./controllers/DashboardController');
+const BookingController = require('./controllers/BookingController');
 
 const routes = express.Router();
 const upload = multer(uploadConfig)
