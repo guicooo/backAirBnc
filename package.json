@@ -4,8 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "dev": "nodemon server"
+    "dev": "nodemon src/server",
+    "start": "node src/server"
+
   },
   "keywords": [],
   "author": "",
@@ -17,8 +18,5 @@
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
-  },
-  "engines": {
-    "node": "10.x"
   }
 }

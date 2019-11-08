@@ -2,11 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const MongoClient = require('mongodb').MongoClient;
 const cors = require("cors");
-const routes = require('./src/routes');
+const routes = require('./routes');
 
 const app = express();
 
-const uri = "mongodb+srv://admin:admin@cluster0-0ljsi.azure.mongodb.net/test?retryWrites=true&w=majority";
+const uri = "mongodb+srv://admin:admin@cluster0-0ljsi.mongodb.net/test?retryWrites=true&w=majority";
 // const client = new MongoClient(uri, { 
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true,
